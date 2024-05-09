@@ -1,2 +1,4 @@
-package org.example.webbase.dao;public interface ItemDao {
+package org.example.webbase.dao;
+
+public interface ItemDao {
 }

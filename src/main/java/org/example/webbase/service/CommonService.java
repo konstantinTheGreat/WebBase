@@ -1,2 +1,4 @@
-package org.example.webbase.service;public interface CommonService {
+package org.example.webbase.service;
+
+public interface CommonService {
 }

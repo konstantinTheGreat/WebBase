@@ -1,30 +1,9 @@
 package org.example.webbase.controller.listener;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-public class SessionAttributeListenerImpl implements ServletContextListener, HttpSessionListener, HttpSessionAttributeListener {
-
-    public SessionAttributeListenerImpl() {}
-
-    @Override
-    public void contextInitialized(ServletContextEvent sce) {
-        /* This method is called when the servlet context is initialized(when the Web application is deployed). */
-    }
-
-    @Override
-    public void contextDestroyed(ServletContextEvent sce) {
-        /* This method is called when the servlet Context is undeployed or Application Server shuts down. */
-    }
-
-    @Override
-    public void sessionCreated(HttpSessionEvent se) {
-        /* Session is created. */
-    }
-
-    @Override
-    public void sessionDestroyed(HttpSessionEvent se) {
-        /* Session is destroyed. */
-    }
+public class SessionAttributeListenerImpl implements HttpSessionAttributeListener {
 
     @Override
     public void attributeAdded(HttpSessionBindingEvent sbe) {

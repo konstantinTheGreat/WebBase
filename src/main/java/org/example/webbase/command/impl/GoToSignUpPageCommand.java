@@ -4,12 +4,13 @@ import org.example.webbase.command.Command;
 
 import javax.servlet.http.HttpServletRequest;
 
-import static org.example.webbase.constants.Constants.LOGIN_PAGE;
+import static org.example.webbase.constants.Constants.SIGNUP_PAGE;
 
-public class DefaultCommand implements Command {
+public class GoToSignUpPageCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest request) {
-        return LOGIN_PAGE;
+        request.getSession().invalidate();
+        return SIGNUP_PAGE;
     }
 }

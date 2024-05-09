@@ -1,2 +1,4 @@
-package org.example.webbase.util;public class SqlQuery {
+package org.example.webbase.util;
+
+public class SqlQuery {
 }

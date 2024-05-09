@@ -1,2 +1,4 @@
-package org.example.webbase.entity;public class Item {
+package org.example.webbase.entity;
+
+public class Item extends AbstractEntity{
 }

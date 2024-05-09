@@ -11,6 +11,10 @@
     <title>Title</title>
 </head>
 <body>
-Successful registration!
+Successful signup!
+<form action="controller">
+    <input type="hidden" name="command" value="logout">
+    <input type="submit" value="back">
+</form>
 </body>
 </html>
