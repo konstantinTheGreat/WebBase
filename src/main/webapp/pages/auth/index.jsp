@@ -4,7 +4,7 @@
 <head>
     <title>login-page</title>
 </head>
-<body>
+    <body style="background-color: #928e93;">
 
 <br/>
 <form action="controller">

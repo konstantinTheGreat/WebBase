@@ -5,10 +5,11 @@ import org.example.webbase.exception.CommandException;
 import org.example.webbase.exception.ServiceException;
 import org.example.webbase.service.UserService;
 import org.example.webbase.service.impl.UserServiceImpl;
+import org.example.webbase.validator.impl.AuthValidatorImpl;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import static org.example.webbase.constants.Constants.*;
+import static org.example.webbase.constant.Constant.*;
 
 public class SendEmailCommand implements Command {
     @Override
@@ -17,6 +18,7 @@ public class SendEmailCommand implements Command {
         String password = request.getParameter(PASSWORD);
         String email = request.getParameter(EMAIL);
         UserService userService = UserServiceImpl.getInstance();
+        AuthValidatorImpl loginValidator = AuthValidatorImpl.getInstance(); //todo (change email sending, verif code should be created here)
 
         String page;
         HttpSession session = request.getSession();

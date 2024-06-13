@@ -7,11 +7,13 @@ import org.example.webbase.exception.ServiceException;
 import org.example.webbase.service.UserService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.example.webbase.validator.impl.AuthValidatorImpl;
 
 
 public class UserServiceImpl implements UserService {
-    private static UserServiceImpl instance = new UserServiceImpl();
     private static final Logger logger = LogManager.getLogger(UserServiceImpl.class.getName());
+    private static final UserServiceImpl instance = new UserServiceImpl();
+
 
     private UserServiceImpl() {
     }
@@ -35,7 +37,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean signUp(String username, String password, String email, Integer codeVerification) throws ServiceException{
+    public boolean signUp(String username, String password, String email, Integer codeVerification) throws ServiceException {
+        AuthValidatorImpl validator = AuthValidatorImpl.getInstance();
+        validator.isValidEmail(email);
+        validator.isValidPassword(password);
+
         UserDaoImpl userDao = UserDaoImpl.getInstance();
         boolean match;
         try {
@@ -61,6 +67,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public boolean userDelete(String username, String password) throws ServiceException {
+        UserDaoImpl userDao = UserDaoImpl.getInstance();
+        try {
+            return userDao.deleteUser(username, password);
+        } catch (DaoException e) {
+            logger.log(Level.ERROR, "error while deleting user");
+            throw new ServiceException(e);
+        }
+    }
+
+    @Override
     public Integer verification(String userEmail) throws ServiceException {
         UserDaoImpl userDao = UserDaoImpl.getInstance();
         int verificationCode;
@@ -71,5 +88,15 @@ public class UserServiceImpl implements UserService {
             throw new ServiceException(e);
         }
         return verificationCode;
+    }
+
+    @Override
+    public boolean uploadFile(String pathOfFile, String username) throws ServiceException {
+        UserDaoImpl userDao = UserDaoImpl.getInstance();
+        try {
+            return userDao.uploadFile(pathOfFile, username);
+        } catch (DaoException e) {
+            throw new ServiceException(e);
+        }
     }
 }

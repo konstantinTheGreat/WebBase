@@ -10,8 +10,14 @@ public enum CommandType {
     GO_TO_CHANGE_PASSWORD(new GoToChangePasswordCommand()),
     CHANGE_PASSWORD(new ChangePasswordCommand()),
     VERIFICATION(new SendEmailCommand()),
+    PROFILE(new GoToProfileCommand()),
+    DELETE_USER(new DeleteUserCommand()),
+    UPLOAD_FILE(new UploadFileCommand()),
     DEFAULT(new DefaultCommand());
 
+
+
+    //GO_TO
     Command command;
 
     CommandType(Command command) {

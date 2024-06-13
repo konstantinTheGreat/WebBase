@@ -4,7 +4,7 @@ import org.example.webbase.command.Command;
 
 import javax.servlet.http.HttpServletRequest;
 
-import static org.example.webbase.constants.Constants.LOGIN_PAGE;
+import static org.example.webbase.constant.Constant.LOGIN_PAGE;
 
 public class LogoutCommand implements Command {
 

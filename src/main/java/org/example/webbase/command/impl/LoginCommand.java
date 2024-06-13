@@ -7,7 +7,6 @@ import org.example.webbase.exception.ServiceException;
 import org.example.webbase.pool.ConnectionPool;
 import org.example.webbase.service.UserService;
 import org.example.webbase.service.impl.UserServiceImpl;
-import org.intellij.lang.annotations.Language;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -16,7 +15,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import static org.example.webbase.constants.Constants.*;
+import static org.example.webbase.constant.Constant.*;
 
 public class LoginCommand implements Command {
 
@@ -35,8 +34,7 @@ public class LoginCommand implements Command {
                 request.setAttribute(USERNAME, login);
                 session.setAttribute(USERNAME, login);
                 session.setAttribute(EMAIL, email);
-
-                page = PROFILE_PAGE;
+                page = MAIN_MENU;
             } else {
                 request.setAttribute(LOGIN_ERROR, INCORRECT_LOGIN_MESSAGE);
                 page = LOGIN_PAGE;

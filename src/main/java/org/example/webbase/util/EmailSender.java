@@ -1,11 +1,11 @@
-package org.example.webbase.pool;
+package org.example.webbase.util;
 
 import java.util.Properties;
 import javax.mail.*;
 import javax.mail.internet.*;
 
-import static org.example.webbase.constants.Constants.EMAIL_USERNAME;
-import static org.example.webbase.constants.Constants.EMAIL_PASSWORD;
+import static org.example.webbase.constant.Constant.EMAIL_USERNAME;
+import static org.example.webbase.constant.Constant.EMAIL_PASSWORD;
 
 public class EmailSender {
 

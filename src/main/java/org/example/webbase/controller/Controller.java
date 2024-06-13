@@ -10,9 +10,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
-import static org.example.webbase.constants.Constants.*;
+import static org.example.webbase.constant.Constant.*;
 
 @WebServlet(name = "helloServlet", urlPatterns = {"/controller", "*.do"})
+@MultipartConfig
 public class Controller extends HttpServlet {
 
     public void init() {
@@ -27,10 +28,8 @@ public class Controller extends HttpServlet {
         try {
             page = command.execute(request);
             request.getRequestDispatcher(page).forward(request, response);
-            //response.sendRedirect(page);
+
         } catch (CommandException e) {
-            ///response.sendError(500);
-            //throw new ServletException(e);
             request.setAttribute(ERROR_MESSAGE, e.getCause());
             request.getRequestDispatcher(ERROR_500_PAGE).forward(request, response);
         }
@@ -40,6 +39,9 @@ public class Controller extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }
+
+
+
 
     public void destroy() {
         ConnectionPool.getInstance().destroyPool();

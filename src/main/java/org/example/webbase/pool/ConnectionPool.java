@@ -7,8 +7,17 @@ import java.util.Properties;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+
+
+import static org.example.webbase.constant.Constant.*;
+
 public class ConnectionPool {
     private static ConnectionPool instance;
+    private static final Logger logger = LogManager.getLogger(ConnectionPool.class.getName());
     private BlockingQueue<Connection> free = new LinkedBlockingQueue<>(8);
     private BlockingQueue<Connection> used = new LinkedBlockingQueue<>(8);
     private Properties dbProp = new Properties();
@@ -21,18 +30,17 @@ public class ConnectionPool {
         }
     }
     private ConnectionPool() {
-        String dbUrl = "jdbc:postgresql://localhost:5432/WebServer";
-        dbProp.put("user", "postgres");
-        dbProp.put("password", "gustavofabelo2169");
+        dbProp.put(USER, DB_USER);
+        dbProp.put(PASSWORD, DB_PASSWORD);
 
-        for (int i = 0; i < 8; i++) {
-            Connection connection = null;
+        for (int i = 0; i < EIGHT; i++) {
+            Connection connection;
             try {
-                connection = DriverManager.getConnection(dbUrl, dbProp);
+                connection = DriverManager.getConnection(DB_URL, dbProp);
+                free.add(connection);
             } catch (SQLException e) {
                 throw new ExceptionInInitializerError(e);
             }
-            free.add(connection);
         }
     }
 
@@ -53,7 +61,7 @@ public class ConnectionPool {
             connection = free.take();
             used.put(connection);
         } catch (InterruptedException e) {
-                //log
+            logger.log(Level.ERROR, "Thread was interrupted while getting a connection.");
             Thread.currentThread().interrupt();
         }
         return connection;
@@ -61,21 +69,42 @@ public class ConnectionPool {
 
     public void releaseConnection(Connection connection) {
         try {
-            used.remove(connection);
-            free.put(connection);
+            if (used.remove(connection)) {
+                try {
+                    if (!connection.isClosed() && connection.isValid(2)) {
+                        free.put(connection);
+                    } else {
+                        connection.close();
+                    }
+                } catch (SQLException e) {
+                    logger.log(Level.ERROR, "SQLException occurred while validating or closing the connection: " + e.getMessage());
+                }
+            } else {
+                logger.log(Level.ERROR, "Attempted to release an unknown or already released connection.");
+            }
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            Thread.currentThread().interrupt();
+            logger.log(Level.ERROR, "Thread was interrupted while releasing a connection.");
+        }
+        System.out.println(used);
+        System.out.println(free);
+    }
+
+    public static void deregisterDriver() {
+        try {
+            DriverManager.deregisterDriver(DriverManager.getDriver(DB_URL));
+        } catch (SQLException e) {
+            logger.log(Level.ERROR, "error while deregister driver");
         }
     }
 
-    //deregisterDriver
-
     public void destroyPool() {
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < EIGHT; i++) {
             try {
-                free.take().close();
+                Connection connection = free.take();
+                connection.close();
             } catch (SQLException | InterruptedException e) {
-                /// log throw new RuntimeException(e);
+                logger.log(Level.ERROR, "Exception occurred while closing connections in the pool.");
                 throw new RuntimeException(e);
             }
         }

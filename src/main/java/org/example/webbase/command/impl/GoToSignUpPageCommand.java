@@ -4,7 +4,7 @@ import org.example.webbase.command.Command;
 
 import javax.servlet.http.HttpServletRequest;
 
-import static org.example.webbase.constants.Constants.SIGNUP_PAGE;
+import static org.example.webbase.constant.Constant.SIGNUP_PAGE;
 
 public class GoToSignUpPageCommand implements Command {
 

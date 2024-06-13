@@ -9,61 +9,49 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90320073-aece-4d93-85ee-a51de27c99e3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/GoToSignUpPageCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/SendEmailCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/constants/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/pool/EmailSender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/util/codeGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/auth/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/auth/signUp.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/auth/verification.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/profilePages/changePassword.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/profilePages/main.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="90320073-aece-4d93-85ee-a51de27c99e3" name="Changes" comment="Modified#1">
+      <change afterPath="$PROJECT_DIR$/src/main/java/gameEntities/Tank.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/DeleteUserCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/GoToProfileCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/UploadFileCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/exception/ValidationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/util/PasswordHasher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/validator/AuthValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/validator/BasicValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/validator/impl/AuthValidatorImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/validator/impl/BasicValidatorImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/profile/main_menu.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/Command.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/CommandType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/CommandType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/Router.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/AddUserCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/AddUserCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/ChangePasswordCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/ChangePasswordCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/DefaultCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/DefaultCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/GoToChangePasswordCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/GoToChangePasswordCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/GoToSignUpPageCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/GoToSignUpPageCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/LoginCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/LoginCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/LogoutCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/LogoutCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/SignUpCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/SendEmailCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/SendEmailCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/constant/Constant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/controller/listener/ServletContextListenerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/controller/listener/ServletContextListenerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/controller/listener/SessionAttributeListenerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/controller/listener/SessionAttributeListenerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/controller/listener/SessionCreateListenerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/controller/listener/SessionCreateListenerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/dao/BaseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/dao/BaseDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/dao/ItemDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/dao/ItemDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/dao/impl/UserDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/entity/AbstractEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/entity/AbstractEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/entity/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/entity/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/exception/CommandException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/exception/CommandException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/exception/DaoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/exception/DaoException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/exception/ServiceException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/exception/ServiceException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/pool/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/pool/ConnectionPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/service/CommonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/service/CommonService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/service/ItemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/pool/EmailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/util/EmailSender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/util/SqlQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/util/SqlQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/util/SqlQuery.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/util/codeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/util/CodeGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/changePassword.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/error/error_404.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/error/error_404.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/error/error_500.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/error/error_500.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/main.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/signUp.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/success.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/auth/success.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/verification.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/auth/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/auth/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/auth/success.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/auth/success.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/auth/verification.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/auth/verification.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/profilePages/changePassword.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/profile/changePassword.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/profilePages/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/profile/profile.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,9 +62,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Listener" />
+        <option value="Interface" />
+        <option value="CSS File" />
         <option value="Jsp File" />
+        <option value="JavaScript File" />
         <option value="Class" />
       </list>
     </option>
@@ -119,6 +109,7 @@
     &quot;Tomcat Server.Tomcat 9.0.861.executor&quot;: &quot;Run&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/user/Desktop/java4thsem/WebBase&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -293,7 +284,35 @@
       <workItem from="1715084577886" duration="1059000" />
       <workItem from="1715093510572" duration="1177000" />
       <workItem from="1715183165351" duration="6355000" />
+      <workItem from="1715240262061" duration="4160000" />
+      <workItem from="1715696287418" duration="6864000" />
+      <workItem from="1715852550057" duration="16000" />
+      <workItem from="1715870003211" duration="9622000" />
+      <workItem from="1715938265117" duration="1022000" />
+      <workItem from="1715954307240" duration="2888000" />
+      <workItem from="1716226483734" duration="71000" />
+      <workItem from="1716882562739" duration="17365000" />
+      <workItem from="1716991588030" duration="5178000" />
+      <workItem from="1717078772589" duration="6737000" />
+      <workItem from="1717163224357" duration="4683000" />
+      <workItem from="1717339055119" duration="375000" />
+      <workItem from="1717515601350" duration="3550000" />
+      <workItem from="1717519998944" duration="1897000" />
+      <workItem from="1717607391561" duration="179000" />
+      <workItem from="1717686430004" duration="84000" />
+      <workItem from="1717691393891" duration="1935000" />
+      <workItem from="1717693402280" duration="7903000" />
+      <workItem from="1717749614676" duration="57000" />
     </task>
+    <task id="LOCAL-00001" summary="Modified#1">
+      <option name="closed" value="true" />
+      <created>1715240535695</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715240535696</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,6 +329,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Modified#1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified#1" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -318,19 +341,24 @@
           <option name="timeStamp" value="1" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/webbase/dao/impl/UserDaoImpl.java</url>
-          <line>126</line>
-          <option name="timeStamp" value="23" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/webbase/service/impl/UserServiceImpl.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/webbase/dao/impl/UserDaoImpl.java</url>
-          <line>129</line>
-          <option name="timeStamp" value="24" />
+          <line>177</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/webbase/dao/impl/UserDaoImpl.java</url>
-          <line>128</line>
-          <option name="timeStamp" value="30" />
+          <line>180</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/webbase/dao/impl/UserDaoImpl.java</url>
+          <line>179</line>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

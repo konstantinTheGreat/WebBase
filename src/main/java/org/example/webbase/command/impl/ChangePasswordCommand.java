@@ -5,12 +5,11 @@ import org.example.webbase.exception.CommandException;
 import org.example.webbase.exception.ServiceException;
 import org.example.webbase.service.UserService;
 import org.example.webbase.service.impl.UserServiceImpl;
-import org.example.webbase.constants.Constants.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import static org.example.webbase.constants.Constants.*;
+import static org.example.webbase.constant.Constant.*;
 
 public class ChangePasswordCommand implements Command {
     @Override

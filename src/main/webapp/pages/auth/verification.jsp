@@ -13,11 +13,11 @@
 <body>
 <form action="controller">
     <input type="hidden" name="command" value="add_user"/>
-    verification code: <input type="text" name="verificationCode" value=""/>
+    verification code: <input type="text" name="verification_code" value=""/>
     <br/>
     <input type="submit" name="sub" value="Submit"/>
     <br/>
-    ${verif_error}
+    ${verification_error}
 </form>
 </body>
 </html>

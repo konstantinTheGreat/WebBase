@@ -5,6 +5,7 @@ import org.example.webbase.exception.CommandException;
 import org.example.webbase.exception.ServiceException;
 import org.example.webbase.service.UserService;
 import org.example.webbase.service.impl.UserServiceImpl;
+import static org.example.webbase.constant.Constant.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -12,22 +13,22 @@ import javax.servlet.http.HttpSession;
 public class AddUserCommand implements Command {
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
-        Integer userVerificationCode = Integer.valueOf(request.getParameter("verificationCode"));
+        Integer userVerificationCode = Integer.valueOf(request.getParameter(VERIFICATION_CODE));
         UserService userService = UserServiceImpl.getInstance();
         String page;
         HttpSession session = request.getSession();
-        Integer verificationCode = (Integer) session.getAttribute("verificationCode");
-        String username = (String) session.getAttribute("username");
-        String password = (String) session.getAttribute("password");
-        String email = (String) session.getAttribute("email");
+        Integer verificationCode = (Integer) session.getAttribute(VERIFICATION_CODE);
+        String username = (String) session.getAttribute(USERNAME);
+        String password = (String) session.getAttribute(PASSWORD);
+        String email = (String) session.getAttribute(EMAIL);
         try {
                 if(userService.signUp(username, password, email, verificationCode) && userVerificationCode.equals(verificationCode)) {
-                    page = "pages/auth/success.jsp";
+                    page = SUCCESS_PAGE;
                 } else {
-                    request.setAttribute("verif_error", "Incorrect code");
-                    page = "pages/auth/verification.jsp";
+                    request.setAttribute(VERIFICATION_ERROR, INCORRECT_CODE);
+                    page = VERIFICATION_PAGE;
                 }
-                session.setAttribute("current_page", page);
+                session.setAttribute(CURRENT_PAGE, page);
             } catch (ServiceException e) {
                 throw new CommandException(e);
             }
