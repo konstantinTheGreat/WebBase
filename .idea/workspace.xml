@@ -9,49 +9,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90320073-aece-4d93-85ee-a51de27c99e3" name="Changes" comment="Modified#1">
-      <change afterPath="$PROJECT_DIR$/src/main/java/gameEntities/Tank.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/DeleteUserCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/GoToProfileCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/UploadFileCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/exception/ValidationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/util/PasswordHasher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/validator/AuthValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/validator/BasicValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/validator/impl/AuthValidatorImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/validator/impl/BasicValidatorImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/scripts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/profile/main_menu.jsp" afterDir="false" />
+    <list default="true" id="90320073-aece-4d93-85ee-a51de27c99e3" name="Changes" comment="Modified#3">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/GoToGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/controller/CookieController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/controller/RedirectServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/entity/Admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/exception/HttpException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/filter/EncodingFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/filter/LoggedInFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/filter/RequestLoggingFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/filter/StatusCheckFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/pool/connectionPoolImpl/ConnectionPoolImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/pool/connectionPoolImpl/ConnectionPoolProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin_pages/main_menu.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/game-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/game/mainGame.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gameEntities/Tank.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/CommandType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/CommandType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/AddUserCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/AddUserCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/ChangePasswordCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/ChangePasswordCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/DefaultCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/DefaultCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/GoToChangePasswordCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/GoToChangePasswordCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/GoToSignUpPageCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/GoToSignUpPageCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/LoginCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/LoginCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/LogoutCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/LogoutCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/SendEmailCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/command/impl/SendEmailCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/constant/Constant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/constant/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/constant/Constant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/dao/impl/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/entity/AbstractEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/entity/AbstractEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/exception/DaoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/exception/DaoException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/pool/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/pool/ConnectionPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/pool/EmailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/util/EmailSender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/util/SqlQuery.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/util/codeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/util/CodeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webbase/validator/impl/AuthValidatorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webbase/validator/impl/AuthValidatorImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/auth/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/auth/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/auth/success.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/auth/success.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/auth/verification.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/auth/verification.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/profilePages/changePassword.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/profile/changePassword.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/profilePages/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/profile/profile.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/profile/main_menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/profile/main_menu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/profile/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/profile/profile.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,11 +56,12 @@
       <list>
         <option value="Enum" />
         <option value="Listener" />
-        <option value="Interface" />
-        <option value="CSS File" />
-        <option value="Jsp File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
+        <option value="Interface" />
+        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Servlet" />
       </list>
     </option>
   </component>
@@ -100,37 +94,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Tomcat Server.Tomcat 9.0.861.executor&quot;: &quot;Run&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/user/Desktop/java4thsem/WebBase&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Tomcat Server.Tomcat 9.0.861.executor": "Run",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/user/Desktop/java4thsem/WebBase",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/webapp/pages/auth" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/user_pages" />
       <recent name="$PROJECT_DIR$/src/main/webapp" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/pages/auth" />
       <recent name="$PROJECT_DIR$/src/main/webapp/pages/profilePages" />
       <recent name="$PROJECT_DIR$/src/main/webapp/pages" />
     </key>
@@ -303,6 +298,15 @@
       <workItem from="1717691393891" duration="1935000" />
       <workItem from="1717693402280" duration="7903000" />
       <workItem from="1717749614676" duration="57000" />
+      <workItem from="1718272339419" duration="1691000" />
+      <workItem from="1718281161722" duration="8630000" />
+      <workItem from="1718298191684" duration="141000" />
+      <workItem from="1718389482995" duration="300000" />
+      <workItem from="1718501690519" duration="1214000" />
+      <workItem from="1718550660476" duration="20000" />
+      <workItem from="1718556846736" duration="5109000" />
+      <workItem from="1718562972226" duration="3458000" />
+      <workItem from="1718645445012" duration="17981000" />
     </task>
     <task id="LOCAL-00001" summary="Modified#1">
       <option name="closed" value="true" />
@@ -312,7 +316,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715240535696</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Modified#3">
+      <option name="closed" value="true" />
+      <created>1718272677108</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1718272677109</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,7 +343,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Modified#1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified#1" />
+    <MESSAGE value="Modified#3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified#3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -341,24 +354,29 @@
           <option name="timeStamp" value="1" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/webbase/service/impl/UserServiceImpl.java</url>
-          <line>95</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/webbase/controller/Controller.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/webbase/dao/impl/UserDaoImpl.java</url>
-          <line>177</line>
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/webbase/controller/Controller.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/webbase/filter/EncodingFilter.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/webbase/filter/EncodingFilter.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/webbase/filter/StatusCheckFilter.java</url>
+          <line>29</line>
           <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/webbase/dao/impl/UserDaoImpl.java</url>
-          <line>180</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/webbase/dao/impl/UserDaoImpl.java</url>
-          <line>179</line>
-          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

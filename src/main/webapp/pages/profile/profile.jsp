@@ -46,6 +46,3 @@ Email: ${email}
 
 
 
-
-<%--<input id="myFile" type="file"/> <br/>--%>
-<%--<button onclick="uploadFile()"> Upload </button>--%>

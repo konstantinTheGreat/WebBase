@@ -2,12 +2,7 @@ package org.example.webbase.validator.impl;
 
 import org.example.webbase.exception.DaoException;
 import org.example.webbase.exception.ServiceException;
-import org.example.webbase.pool.ConnectionPool;
 import org.example.webbase.validator.AuthValidator;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
 import static org.example.webbase.constant.Constant.*;
 

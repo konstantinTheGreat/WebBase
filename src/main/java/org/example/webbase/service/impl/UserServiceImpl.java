@@ -2,6 +2,7 @@ package org.example.webbase.service.impl;
 
 import org.apache.logging.log4j.Level;
 import org.example.webbase.dao.impl.UserDaoImpl;
+import org.example.webbase.entity.User;
 import org.example.webbase.exception.DaoException;
 import org.example.webbase.exception.ServiceException;
 import org.example.webbase.service.UserService;
@@ -98,5 +99,11 @@ public class UserServiceImpl implements UserService {
         } catch (DaoException e) {
             throw new ServiceException(e);
         }
+    }
+
+    @Override
+    public User getUserInfo(String username) throws ServiceException, DaoException {
+        UserDaoImpl userDao = UserDaoImpl.getInstance();
+        return userDao.getUserInfo(username);
     }
 }

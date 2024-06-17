@@ -1,5 +1,7 @@
 
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>User-page</title>
@@ -8,7 +10,7 @@
 </head>
 <body class= "button-container background-color">
 <form action="controller">
-    <input type="hidden" name="command" value="go_to_game">
+    <input type="hidden" name="command" value="see_all_users">    // add a list of all users and deletion option
     <button type="submit" class="custom-button">Play</button>
 </form>
 <form action="controller">
@@ -21,3 +23,4 @@
 </form>
 </body>
 </html>
+

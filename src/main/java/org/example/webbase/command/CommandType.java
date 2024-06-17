@@ -8,6 +8,7 @@ public enum CommandType {
     LOGOUT(new LogoutCommand()),
     SIGNUP(new GoToSignUpPageCommand()),
     GO_TO_CHANGE_PASSWORD(new GoToChangePasswordCommand()),
+    GO_TO_GAME(new GoToGame()),
     CHANGE_PASSWORD(new ChangePasswordCommand()),
     VERIFICATION(new SendEmailCommand()),
     PROFILE(new GoToProfileCommand()),

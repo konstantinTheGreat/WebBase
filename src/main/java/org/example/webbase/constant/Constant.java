@@ -26,7 +26,7 @@ public class Constant {
     public static final String INCORRECT_LOGIN_MESSAGE = "incorrect email";
     public static final String LOGIN_PAGE = "pages/auth/index.jsp";
     public static final String PROFILE_PAGE = "pages/profile/profile.jsp";
-    public static final String MAIN_MENU = "pages/profile/main_menu.jsp";
+    public static final String MAIN_MENU = "/pages/profile/main_menu.jsp";
     public static final String CHANGE_PASSWORD_PAGE = "pages/profile/changePassword.jsp";
     public static final String OLD_PASSWORD = "old_password";
     public static final String NEW_PASSWORD = "new_password";
@@ -51,4 +51,8 @@ public class Constant {
     public static final String DB_URL = "jdbc:postgresql://localhost:5432/WebServer";
     public static final String USER = "user";
     public static final String DB_USER = "postgres";
+    public static final String MAIN_GAME = "pages/game/mainGame.jsp";
+    public static final String CURRENT_USER =  "currentUser";
+    public static final String GET_USER_INFO = "SELECT userid, username, password, email, verification_code, salt, profile_pic, status FROM users WHERE username = ?";
+    public static final String STATUS = "status";
 }

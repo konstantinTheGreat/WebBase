@@ -4,11 +4,10 @@ import org.example.webbase.dao.BaseDao;
 import org.example.webbase.dao.UserDao;
 import org.example.webbase.entity.User;
 import org.example.webbase.exception.DaoException;
-import org.example.webbase.pool.ConnectionPool;
+import org.example.webbase.pool.connectionPoolImpl.ConnectionPoolProxy;
 import org.example.webbase.util.EmailSender;
 import org.example.webbase.util.CodeGenerator;
 import org.example.webbase.util.PasswordHasher;
-import org.intellij.lang.annotations.Language;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
@@ -24,6 +23,7 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
 
     private static final PasswordHasher passwordHasher = PasswordHasher.getInstance();
 
+    private static final ConnectionPoolProxy connectionPoolProxy = new ConnectionPoolProxy();
     private UserDaoImpl() {
     }
 
@@ -42,16 +42,19 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
     }
     @Override
     public boolean deleteUser(String username, String password) throws DaoException {
-        try (Connection connection = ConnectionPool.getInstance().getConnection();
-             PreparedStatement statement = connection.prepareStatement(DELETE_USER)) {
+        Connection connection = connectionPoolProxy.getConnection();
+        try {
+            PreparedStatement statement = connection.prepareStatement(DELETE_USER);
             statement.setString(1, username);
             int rowsAffected = statement.executeUpdate();
-            ConnectionPool.getInstance().releaseConnection(connection);
+
             if(rowsAffected > 0) {
                 return true;
             }
         } catch (SQLException e ) {
             throw new DaoException(e);
+        } finally {
+            connectionPoolProxy.releaseConnection(connection);
         }
         return false;
     }
@@ -70,9 +73,11 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
     @Override
     public boolean authenticate(String username, String password) throws DaoException {
 
+        Connection connection = connectionPoolProxy.getConnection();
+
         boolean match = false;
-        try (Connection connection = ConnectionPool.getInstance().getConnection();
-             PreparedStatement statement = connection.prepareStatement(SELECT_PASSWORD)) {
+        try {
+             PreparedStatement statement = connection.prepareStatement(SELECT_PASSWORD);
             statement.setString(1, username);
             ResultSet resultSet = statement.executeQuery();
             String passFromDb;
@@ -82,9 +87,11 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
                 String hashedPassword = passwordHasher.hashPassword(password, salt);
                 match = hashedPassword.equals(passFromDb);
             }
-            ConnectionPool.getInstance().releaseConnection(connection);
+
         } catch (SQLException | NoSuchAlgorithmException | InvalidKeySpecException e ) {
             throw new DaoException(e);
+        } finally {
+            connectionPoolProxy.releaseConnection(connection);
         }
 
         return match;
@@ -95,8 +102,9 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
         if (username.isEmpty() || password.isEmpty() || email.isEmpty()) {
             throw new DaoException();
         } else {
-            try (Connection connection = ConnectionPool.getInstance().getConnection();
-                 PreparedStatement statement = connection.prepareStatement(ADD_USER)) {
+            Connection connection = connectionPoolProxy.getConnection();
+            try {
+                PreparedStatement statement = connection.prepareStatement(ADD_USER);
                 String salt = passwordHasher.generateSalt();
                 String hashedPassword = passwordHasher.hashPassword(password, salt);
 
@@ -107,12 +115,13 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
                 statement.setString(5, salt);
 
                 int newRows = statement.executeUpdate();
-                ConnectionPool.getInstance().releaseConnection(connection);
                 if (newRows > 0) {
                     return true;
                 }
             } catch (SQLException | NoSuchAlgorithmException | InvalidKeySpecException e ) {
                 throw new DaoException(e);
+            } finally {
+                connectionPoolProxy.releaseConnection(connection);
             }
 
         }
@@ -127,16 +136,17 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
         if (oldPassword.isEmpty() || newPassword.isEmpty() || username.isEmpty()) {
             throw new DaoException();
         } else {
-            try (Connection connection = ConnectionPool.getInstance().getConnection();
-
-                 PreparedStatement statement = connection.prepareStatement(CHANGE_PASSWORD)) {
+            Connection connection = connectionPoolProxy.getConnection();
+            try {
+                PreparedStatement statement = connection.prepareStatement(CHANGE_PASSWORD);
                 statement.setString(1, newPassword);
                 statement.setString(2, username);
                 int rowsAffected = statement.executeUpdate();
-                ConnectionPool.getInstance().releaseConnection(connection);
                 return rowsAffected > 0;
             } catch (SQLException e) {
                 throw new DaoException(e);
+            } finally {
+                connectionPoolProxy.releaseConnection(connection);
             }
         }
     }
@@ -152,8 +162,9 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
 
     @Override
     public boolean userExists(String username, String password) throws DaoException {
-        try (Connection connection = ConnectionPool.getInstance().getConnection();
-             PreparedStatement statement = connection.prepareStatement(CHECK_USER)){
+        Connection connection = connectionPoolProxy.getConnection();
+        try {
+            PreparedStatement statement = connection.prepareStatement(CHECK_USER);
             statement.setString(1, username);
             ResultSet resultSet = statement.executeQuery();
             String usernameFromDB = "";
@@ -162,12 +173,13 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
                 usernameFromDB = resultSet.getString(1);
                 passwordFromDB = resultSet.getString(2);
             }
-            ConnectionPool.getInstance().releaseConnection(connection);
             if (usernameFromDB.equals(username) && passwordFromDB.equals(password)) {
                 return true;
             }
         } catch (SQLException e) {
             throw new DaoException(e);
+        } finally {
+            connectionPoolProxy.releaseConnection(connection);
         }
 
         return false;
@@ -175,20 +187,52 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
 
     @Override
     public boolean uploadFile(String pathName, String username) throws DaoException {
-        try (Connection connection = ConnectionPool.getInstance().getConnection();
-             PreparedStatement statement = connection.prepareStatement(UPLOAD_FILE_SQL)){
+        Connection connection = connectionPoolProxy.getConnection();
+        try {
+            PreparedStatement statement = connection.prepareStatement(UPLOAD_FILE_SQL);
             statement.setString(1, pathName);
             statement.setString(2, username);
             int rowsAffected = statement.executeUpdate();
-            ConnectionPool.getInstance().releaseConnection(connection);
             if(rowsAffected <= 0) {
                 return false;
             }
         } catch (SQLException e) {
             throw new DaoException(e);
+        } finally {
+            connectionPoolProxy.releaseConnection(connection);
         }
 
         return true;
     }
+
+    @Override
+    public User getUserInfo(String username) throws DaoException {
+        Connection connection = connectionPoolProxy.getConnection();
+        User newUser = new User();
+        try {
+
+            PreparedStatement statement = connection.prepareStatement(GET_USER_INFO);
+            statement.setString(1, username);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                newUser.setUserID(resultSet.getInt(1));
+                newUser.setUsername(resultSet.getString(2));
+                newUser.setPassword(resultSet.getString(3));
+                newUser.setEmail(resultSet.getString(4));
+                newUser.setVerification_code(resultSet.getInt(5));
+                newUser.setSalt(resultSet.getString(6));
+                newUser.setProfilePic(resultSet.getString(7));
+                newUser.setStatus(resultSet.getString(8));
+            }
+        } catch (SQLException e) {
+            throw new DaoException(e);
+        } finally {
+            connectionPoolProxy.releaseConnection(connection);
+        }
+
+        return newUser;
+
+    }
+
 
 }

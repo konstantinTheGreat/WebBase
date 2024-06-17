@@ -7,7 +7,7 @@
     <body style="background-color: #928e93;">
 
 <br/>
-<form action="controller">
+<form action="login">
         <input type="hidden" name="command" value="login"/>
     Login: <input type="text" name="username" value=""/>
         <br/>

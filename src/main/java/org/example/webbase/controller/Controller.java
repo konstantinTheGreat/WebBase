@@ -3,7 +3,7 @@ package org.example.webbase.controller;
 import org.example.webbase.command.Command;
 import org.example.webbase.command.CommandType;
 import org.example.webbase.exception.CommandException;
-import org.example.webbase.pool.ConnectionPool;
+import org.example.webbase.pool.connectionPoolImpl.ConnectionPoolImpl;
 
 import java.io.*;
 import javax.servlet.ServletException;
@@ -12,7 +12,7 @@ import javax.servlet.annotation.*;
 
 import static org.example.webbase.constant.Constant.*;
 
-@WebServlet(name = "helloServlet", urlPatterns = {"/controller", "*.do"})
+@WebServlet(name = "helloServlet", urlPatterns = {"/controller", "*.do", "/login"})
 @MultipartConfig
 public class Controller extends HttpServlet {
 
@@ -44,6 +44,6 @@ public class Controller extends HttpServlet {
 
 
     public void destroy() {
-        ConnectionPool.getInstance().destroyPool();
+        ConnectionPoolImpl.getInstance().destroyPool();
     }
 }

@@ -1,0 +1,13 @@
+.game-grid {
+    width: 400px;
+    height: 200px;
+    border: 1px solid #000; /* Border around the grid */
+    background-color: #fff; /* Grid background color */
+}
+
+.game-gridWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}

@@ -11,4 +11,5 @@ public interface UserDao {
     boolean userExists(String username, String password) throws DaoException;
     boolean deleteUser(String username, String password) throws DaoException;
     boolean uploadFile(String pathName, String username) throws DaoException;
+    User getUserInfo(String username) throws DaoException;
 }

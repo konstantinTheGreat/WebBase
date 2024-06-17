@@ -1,10 +1,11 @@
 package org.example.webbase.command.impl;
 
 import org.example.webbase.command.Command;
+import org.example.webbase.entity.User;
 import org.example.webbase.exception.CommandException;
 import org.example.webbase.exception.DaoException;
 import org.example.webbase.exception.ServiceException;
-import org.example.webbase.pool.ConnectionPool;
+import org.example.webbase.pool.connectionPoolImpl.ConnectionPoolImpl;
 import org.example.webbase.service.UserService;
 import org.example.webbase.service.impl.UserServiceImpl;
 
@@ -21,7 +22,8 @@ public class LoginCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
-        String login = request.getParameter(USERNAME);
+
+        String username = request.getParameter(USERNAME);
         String password = request.getParameter(PASSWORD);
         String email;
 
@@ -29,11 +31,13 @@ public class LoginCommand implements Command {
         String page;
         HttpSession session = request.getSession(true);
         try {
-            if (userService.authenticate(login, password)) {
-                email = getEmail(login);
-                request.setAttribute(USERNAME, login);
-                session.setAttribute(USERNAME, login);
-                session.setAttribute(EMAIL, email);
+            if (userService.authenticate(username, password)) {
+                User user = userService.getUserInfo(username);
+                session.setAttribute(USER, user);
+                session.setAttribute(USERNAME, user.getUsername());
+                session.setAttribute(EMAIL, user.getEmail());
+                session.setAttribute(STATUS, user.getStatus());
+
                 page = MAIN_MENU;
             } else {
                 request.setAttribute(LOGIN_ERROR, INCORRECT_LOGIN_MESSAGE);
@@ -46,19 +50,4 @@ public class LoginCommand implements Command {
         return page;
     }
 
-
-    private String getEmail(String username) throws DaoException {
-        String email = null;
-        try (Connection connection = ConnectionPool.getInstance().getConnection();
-             PreparedStatement statement = connection.prepareStatement(GET_EMAIL_SQL)) {
-            statement.setString(1, username);
-            ResultSet resultSet = statement.executeQuery();
-            if (resultSet.next()) {
-                email = resultSet.getString(EMAIL);
-            }
-        } catch (SQLException e) {
-            throw new DaoException(e);
-        }
-        return email;
-    }
 }
