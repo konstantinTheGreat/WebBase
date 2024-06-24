@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService {
     public boolean authenticate(String login, String password) throws ServiceException {
         //validate login, password + md5(шифрование)
         UserDaoImpl userDao = UserDaoImpl.getInstance();
-        boolean match = false;
+        boolean match;
         try {
             match = userDao.authenticate(login, password);
         } catch (DaoException e) {

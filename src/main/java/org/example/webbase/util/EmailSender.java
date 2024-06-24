@@ -4,8 +4,8 @@ import java.util.Properties;
 import javax.mail.*;
 import javax.mail.internet.*;
 
-import static org.example.webbase.constant.Constant.EMAIL_USERNAME;
-import static org.example.webbase.constant.Constant.EMAIL_PASSWORD;
+import static org.example.webbase.constant.PagesConstants.EMAIL_USERNAME;
+import static org.example.webbase.constant.PagesConstants.EMAIL_PASSWORD;
 
 public class EmailSender {
 

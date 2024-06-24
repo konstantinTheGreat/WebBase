@@ -10,6 +10,7 @@ public enum CommandType {
     GO_TO_CHANGE_PASSWORD(new GoToChangePasswordCommand()),
     GO_TO_GAME(new GoToGame()),
     CHANGE_PASSWORD(new ChangePasswordCommand()),
+    CHANGE_LANGUAGE(new ChangeLanguageCommand()),
     VERIFICATION(new SendEmailCommand()),
     PROFILE(new GoToProfileCommand()),
     DELETE_USER(new DeleteUserCommand()),

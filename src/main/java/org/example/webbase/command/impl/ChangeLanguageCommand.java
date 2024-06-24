@@ -5,12 +5,11 @@ import org.example.webbase.exception.CommandException;
 
 import javax.servlet.http.HttpServletRequest;
 
-import static org.example.webbase.constant.PagesConstants.PROFILE_PAGE;
+import static org.example.webbase.constant.PagesConstants.CURRENT_PAGE;
 
-public class GoToProfileCommand implements Command {
-
+public class ChangeLanguageCommand implements Command {
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
-        return PROFILE_PAGE;
+        return request.getParameter(CURRENT_PAGE);
     }
 }

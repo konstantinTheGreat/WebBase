@@ -11,8 +11,8 @@ import java.io.IOException;
 import java.util.Objects;
 
 
-import static org.example.webbase.constant.Constant.MAIN_MENU;
-import static org.example.webbase.constant.Constant.USER;
+import static org.example.webbase.constant.PagesConstants.MAIN_MENU;
+import static org.example.webbase.constant.PagesConstants.USER;
 @WebFilter ("/controller")
 public class StatusCheckFilter implements Filter {
     @Override
@@ -24,17 +24,15 @@ public class StatusCheckFilter implements Filter {
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         HttpSession session = httpRequest.getSession(false);
 
-
         User user = (User) session.getAttribute(USER);
-
-        if (Objects.equals(user.getStatus(), "user")) {
-            RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher(MAIN_MENU);
-            dispatcher.forward(httpRequest, httpResponse);
-            return;
+        if (user != null) {
+            if (Objects.equals(user.getStatus(), USER)) {
+                RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher(MAIN_MENU);
+                dispatcher.forward(httpRequest, httpResponse);
+                return;
+            }
         }
         chain.doFilter(request, response);
-
-
 
     }
 

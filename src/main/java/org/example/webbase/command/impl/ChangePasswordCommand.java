@@ -9,7 +9,7 @@ import org.example.webbase.service.impl.UserServiceImpl;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import static org.example.webbase.constant.Constant.*;
+import static org.example.webbase.constant.PagesConstants.*;
 
 public class ChangePasswordCommand implements Command {
     @Override

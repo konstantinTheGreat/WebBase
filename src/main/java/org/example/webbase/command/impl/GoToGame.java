@@ -5,7 +5,7 @@ import org.example.webbase.exception.CommandException;
 
 import javax.servlet.http.HttpServletRequest;
 
-import static org.example.webbase.constant.Constant.MAIN_GAME;
+import static org.example.webbase.constant.PagesConstants.MAIN_GAME;
 
 public class GoToGame implements Command {
 

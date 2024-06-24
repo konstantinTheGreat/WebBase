@@ -2,16 +2,12 @@ package org.example.webbase.constant;
 
 import org.intellij.lang.annotations.Language;
 
-public class Constant {
+public class PagesConstants {
 //    (public/private) static final TYPE NAME = VALUE;
     //private constructor
+    //pages, sql query
 
-    @Language("SQL")
-    public static final String CHECK_USER = "SELECT username, password FROM Users WHERE username = ?";
-    @Language("SQL")
-    public static final String DELETE_USER = "DELETE FROM users WHERE username = ?";
-    @Language("SQL")
-    public static final String UPLOAD_FILE_SQL = "UPDATE users SET profile_pic = ? WHERE username = ?";
+
     public static final String USERNAME = "username";
     public static final String PASSWORD = "password";
     public static final String EMAIL = "email";
@@ -35,14 +31,6 @@ public class Constant {
     public static final String ERROR_MESSAGE = "error_message";
     public static final String EMAIL_USERNAME = "konstantinthegreat1791@gmail.com";
     public static final String EMAIL_PASSWORD = "ajpq uodz ucvm idnk";
-    @Language("SQL")
-    public static final String GET_EMAIL_SQL = "SELECT email FROM Users WHERE username = ?";
-    @Language("SQL")
-    public static final String SELECT_PASSWORD = "SELECT password, salt FROM Users WHERE username = ?";
-    @Language("SQL")
-    public static final String ADD_USER = "INSERT INTO users (username, password, email, verification_code, salt) VALUES (?, ?, ?, ?, ?)";
-    @Language("SQL")
-    public static final String CHANGE_PASSWORD = "UPDATE users SET password = ? WHERE username = ?";
     public static final int EIGHT = 8;
     public static final String REQUIREMENTS_NOT_MET = "Requirements not met";
     public static final String INCORRECT_CODE = "Incorrect code";
@@ -53,6 +41,18 @@ public class Constant {
     public static final String DB_USER = "postgres";
     public static final String MAIN_GAME = "pages/game/mainGame.jsp";
     public static final String CURRENT_USER =  "currentUser";
-    public static final String GET_USER_INFO = "SELECT userid, username, password, email, verification_code, salt, profile_pic, status FROM users WHERE username = ?";
     public static final String STATUS = "status";
+    public static final String LOGOUT = "logout";
+    public static final String SESSION_ID = "session_id";
+    public static final String LANGUAGE = "language";
+    public static final String SLASH = "/";
+    public static final String EMPTY_STRING = "";
+    public static final String LANG = "lang";
+    public static final String CHANGE_LANGUAGE = "change_language";
+    public static final String ENCODING = "encoding";
+    public static final String PAGE = "page";
+    public static final String CONTROLLER = "controller";
+    public static final String IMAGE_PATH = "imagePath";
+
+
 }

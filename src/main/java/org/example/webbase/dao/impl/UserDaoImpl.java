@@ -14,7 +14,8 @@ import java.security.spec.InvalidKeySpecException;
 import java.sql.*;
 import java.util.List;
 
-import static org.example.webbase.constant.Constant.*;
+import static org.example.webbase.constant.PagesConstants.*;
+import static org.example.webbase.constant.SqlQueryConstants.*;
 
 
 public class UserDaoImpl extends BaseDao<User> implements UserDao {
@@ -113,6 +114,7 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
                 statement.setString(3, email);
                 statement.setInt(4, verificationCode);
                 statement.setString(5, salt);
+                statement.setString(6, USER);
 
                 int newRows = statement.executeUpdate();
                 if (newRows > 0) {
@@ -138,12 +140,15 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
         } else {
             Connection connection = connectionPoolProxy.getConnection();
             try {
+                String salt = passwordHasher.generateSalt();
+                String hashedPassword = passwordHasher.hashPassword(newPassword, salt);
                 PreparedStatement statement = connection.prepareStatement(CHANGE_PASSWORD);
-                statement.setString(1, newPassword);
-                statement.setString(2, username);
+                statement.setString(1, hashedPassword);
+                statement.setString(2, salt);
+                statement.setString(3, username);
                 int rowsAffected = statement.executeUpdate();
                 return rowsAffected > 0;
-            } catch (SQLException e) {
+            } catch (SQLException | NoSuchAlgorithmException | InvalidKeySpecException e) {
                 throw new DaoException(e);
             } finally {
                 connectionPoolProxy.releaseConnection(connection);
@@ -210,7 +215,6 @@ public class UserDaoImpl extends BaseDao<User> implements UserDao {
         Connection connection = connectionPoolProxy.getConnection();
         User newUser = new User();
         try {
-
             PreparedStatement statement = connection.prepareStatement(GET_USER_INFO);
             statement.setString(1, username);
             ResultSet resultSet = statement.executeQuery();

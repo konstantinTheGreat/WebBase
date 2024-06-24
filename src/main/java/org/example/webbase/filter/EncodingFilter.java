@@ -5,6 +5,8 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.annotation.WebInitParam;
 import java.io.IOException;
 
+import static org.example.webbase.constant.PagesConstants.ENCODING;
+
 @WebFilter(urlPatterns = {"/*"},
         initParams = {
         @WebInitParam(name = "encoding" , value = "UTF-8", description = "Encoding Param") })
@@ -13,7 +15,7 @@ public class EncodingFilter implements Filter {
     private String code;
     @Override
     public void init(FilterConfig filterConfig) {
-        code = filterConfig.getInitParameter("encoding");
+        code = filterConfig.getInitParameter(ENCODING);
     }
 
     @Override

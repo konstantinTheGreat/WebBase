@@ -4,7 +4,7 @@ import org.example.webbase.command.Command;
 
 import javax.servlet.http.HttpServletRequest;
 
-import static org.example.webbase.constant.Constant.CHANGE_PASSWORD_PAGE;
+import static org.example.webbase.constant.PagesConstants.CHANGE_PASSWORD_PAGE;
 
 public class GoToChangePasswordCommand implements Command {
 

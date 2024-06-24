@@ -1,13 +1,14 @@
 package org.example.webbase.filter;
 
+import org.example.webbase.entity.User;
+
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
-import static org.example.webbase.constant.Constant.MAIN_MENU;
-import static org.example.webbase.constant.Constant.USERNAME;
+import static org.example.webbase.constant.PagesConstants.*;
 
 
 @WebFilter("/login")
@@ -24,7 +25,7 @@ public class LoggedInFilter implements Filter {
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         HttpSession session = httpRequest.getSession(false);
 
-        if (session.getAttribute(USERNAME) == null) {
+        if (session.getAttribute(USER) == null) {
             chain.doFilter(request, response);
         } else {
             RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher(MAIN_MENU);

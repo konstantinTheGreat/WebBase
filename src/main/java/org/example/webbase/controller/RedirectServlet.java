@@ -5,7 +5,8 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-import static org.example.webbase.constant.Constant.MAIN_MENU;
+import static org.example.webbase.constant.PagesConstants.MAIN_MENU;
+
 
 @WebServlet("/redirect")
 public class RedirectServlet extends HttpServlet {
@@ -15,7 +16,7 @@ public class RedirectServlet extends HttpServlet {
         HttpSession session = request.getSession(false);
         if (session != null && session.getAttribute("redirectToPrevious") != null) {
             session.removeAttribute("redirectToPrevious");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/profile/main_menu.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher(MAIN_MENU);
             dispatcher.forward(request, response);
         }
     }

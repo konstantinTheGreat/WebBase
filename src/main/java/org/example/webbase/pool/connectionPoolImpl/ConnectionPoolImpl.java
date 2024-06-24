@@ -13,7 +13,7 @@ import org.apache.logging.log4j.Logger;
 import org.example.webbase.pool.ConnectionPool;
 
 
-import static org.example.webbase.constant.Constant.*;
+import static org.example.webbase.constant.PagesConstants.*;
 
 public class ConnectionPoolImpl implements ConnectionPool {
     private static ConnectionPoolImpl instance;
@@ -84,8 +84,6 @@ public class ConnectionPoolImpl implements ConnectionPool {
             Thread.currentThread().interrupt();
             logger.log(Level.ERROR, "Thread was interrupted while releasing a connection.");
         }
-        System.out.println(used);
-        System.out.println(free);
     }
 
     public static void deregisterDriver() {

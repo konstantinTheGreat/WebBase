@@ -1,6 +1,7 @@
 package org.example.webbase.command.impl;
 
 import org.example.webbase.command.Command;
+import org.example.webbase.entity.User;
 import org.example.webbase.exception.CommandException;
 import org.example.webbase.exception.ServiceException;
 import org.example.webbase.service.UserService;
@@ -17,14 +18,15 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
-import static org.example.webbase.constant.Constant.*;
+import static org.example.webbase.constant.PagesConstants.*;
 
 public class UploadFileCommand implements Command {
     @Override
     public String execute(HttpServletRequest request) throws CommandException {
         UserService userService = UserServiceImpl.getInstance();
         HttpSession session = request.getSession();
-        String username = (String) session.getAttribute(USERNAME);
+        User user = (User)session.getAttribute(USER);
+        String username = user.getUsername();
 
         try {
             Part filePart = request.getPart("file");
@@ -35,11 +37,10 @@ public class UploadFileCommand implements Command {
                 Files.copy(fileContent, filePath, StandardCopyOption.REPLACE_EXISTING);
             }
 
-            String filePathToString = filePath.toString();
             String relativePath = "uploads/" + fileName;
 
             session.setAttribute("imagePath", relativePath);
-            userService.uploadFile(filePathToString, username);
+            userService.uploadFile(relativePath, username);
 
         } catch (ServletException | IOException | ServiceException e) {
             throw new CommandException(e);

@@ -4,7 +4,7 @@ import org.example.webbase.exception.DaoException;
 import org.example.webbase.exception.ServiceException;
 import org.example.webbase.validator.AuthValidator;
 
-import static org.example.webbase.constant.Constant.*;
+import static org.example.webbase.constant.PagesConstants.*;
 
 public class AuthValidatorImpl extends BasicValidatorImpl<String> implements AuthValidator {
     private static final AuthValidatorImpl instance = new AuthValidatorImpl();

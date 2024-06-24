@@ -27,4 +27,9 @@ public class ConnectionPoolProxy implements ConnectionPool {
     public void destroyPool() {
         realConnectionPool.destroyPool();
     }
+
+
+    public void deregisterDriver() {
+        ConnectionPoolImpl.deregisterDriver();
+    }
 }
